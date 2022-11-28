@@ -21,6 +21,7 @@
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.5",
     "axios": "^0.27.2",
+    "cookies-next": "^2.1.1",
     "formik": "^2.2.9",
     "framer-motion": "^7.6.5",
     "next": "^12.3.0",
