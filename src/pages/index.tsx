@@ -15,7 +15,6 @@ const Index = ({ list }: { list: any }) => {
     >
       <section className=" relative mx-auto h-screen w-screen justify-end bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gray-700 via-gray-900 to-black">
         <MovieSwiper list={list} />
-        {/* <MyForm /> */}
       </section>
     </NavLayout>
   );

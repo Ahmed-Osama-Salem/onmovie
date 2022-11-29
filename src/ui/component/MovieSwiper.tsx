@@ -23,7 +23,7 @@ export default function MovieSwiper({ list }: { list: any }) {
     }
   }, []);
   return (
-    <div className=" mx-auto flex h-[620px] w-screen flex-row-reverse items-center justify-center gap-[100px] ">
+    <div className=" mx-auto flex h-[620px] w-screen flex-row-reverse items-center justify-center gap-[10px] ">
       <Swiper
         onSwiper={(swiper) => {
           if (swiper1Ref !== null) {
@@ -42,7 +42,11 @@ export default function MovieSwiper({ list }: { list: any }) {
         {list.map((item: any, i: Key) => {
           return (
             <SwiperSlide key={i} className=" rounded-2xl">
-              <img src={imagePath + item.poster_path} alt="" />
+              <img
+                src={imagePath + item.poster_path}
+                alt=""
+                className=" w-fit"
+              />
             </SwiperSlide>
           );
         })}
@@ -54,18 +58,15 @@ export default function MovieSwiper({ list }: { list: any }) {
         slidesPerView={1}
         spaceBetween={100}
         loop={false}
-        pagination={{
-          clickable: true,
-        }}
         navigation={true}
-        modules={[Pagination, Navigation, Controller]}
+        modules={[Navigation, Controller]}
         className="flex h-screen w-[500px] items-center gap-5 "
       >
         {list.map((items: any, i: Key) => {
           return (
             <SwiperSlide
               key={i}
-              className="w-[100px] translate-y-[120px] text-[4.5rem] font-extrabold text-white"
+              className="w-[100px] translate-y-[120px] text-[4rem] font-extrabold text-white"
             >
               {items.title}
             </SwiperSlide>
