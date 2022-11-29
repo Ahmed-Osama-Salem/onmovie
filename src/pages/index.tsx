@@ -1,4 +1,4 @@
-import ApiClientLocal from '@/app/utils/ApiClientLocal';
+import { getAllMovies } from '@/app/server/movies/getMoviesList';
 import { Meta } from '@/layouts/Meta';
 import { NavLayout } from '@/templates/NavLayout';
 import MovieSwiper from '@/ui/component/MovieSwiper';
@@ -22,13 +22,14 @@ const Index = ({ list }: { list: any }) => {
 
 export default Index;
 export async function getServerSideProps() {
-  const movieList = await ApiClientLocal.get('api/movies')
-    .then((data) => {
-      return data.data.message.results;
-    })
-    .catch((error) => {
-      return error;
-    });
+  // const movieList = await ApiClientLocal.get('api/movies')
+  //   .then((data) => {
+  //     return data.data.message.results;
+  //   })
+  //   .catch((error) => {
+  //     return error;
+  //   });
+  const movieList = await getAllMovies();
 
   return {
     props: {
