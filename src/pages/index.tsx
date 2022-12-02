@@ -22,13 +22,6 @@ const Index = ({ list }: { list: any }) => {
 
 export default Index;
 export async function getServerSideProps() {
-  // const movieList = await ApiClientLocal.get('api/movies')
-  //   .then((data) => {
-  //     return data.data.message.results;
-  //   })
-  //   .catch((error) => {
-  //     return error;
-  //   });
   const movieList = await getAllMovies();
 
   return {

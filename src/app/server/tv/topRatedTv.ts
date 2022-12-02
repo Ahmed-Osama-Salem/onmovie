@@ -2,10 +2,12 @@
 
 import ApiClient from '@/app/utils/ApiClient';
 
-import { key } from '../movies/getMoviesList';
-
 export const getTopRatedTv = async () => {
-  return ApiClient.get(`tv/top_rated${key}`)
+  return ApiClient.get(`tv/top_rated`, {
+    params: {
+      api_key: process.env.API_KEY,
+    },
+  })
     .then((data) => {
       return data.data;
     })

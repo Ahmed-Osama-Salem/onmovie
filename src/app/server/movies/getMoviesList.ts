@@ -1,8 +1,11 @@
 import ApiClient from '@/app/utils/ApiClient';
 
-export const key = '?api_key=0948a6844e69835e86a78fcfbba6cbb6';
 export const getAllMovies = async () => {
-  return ApiClient.get(`trending/movie/week${key}`)
+  return ApiClient.get(`trending/movie/week`, {
+    params: {
+      api_key: process.env.API_KEY,
+    },
+  })
     .then((data) => {
       return data.data.results;
     })
